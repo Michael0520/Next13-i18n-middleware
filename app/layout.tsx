@@ -1,5 +1,6 @@
 import "@/styles/globals.css"
 import { Metadata } from "next"
+import { defaultLocale } from "@/middleware"
 
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/lib/fonts"
@@ -25,14 +26,19 @@ export const metadata: Metadata = {
   },
 }
 
-interface RootLayoutProps {
+export default function RootLayout({
+  children,
+  params,
+}: {
   children: React.ReactNode
-}
+  params: { lang: string }
+}) {
+  console.log("defaultLocale", defaultLocale)
+  console.log(params)
 
-export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
-      <html lang="en" suppressHydrationWarning>
+      <html lang={defaultLocale} suppressHydrationWarning>
         <head />
         <body
           className={cn(
@@ -40,13 +46,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
             fontSans.variable
           )}
         >
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <div className="relative flex min-h-screen flex-col">
-              <SiteHeader />
-              <div className="flex-1">{children}</div>
-            </div>
-            <TailwindIndicator />
-          </ThemeProvider>
+          <div className="relative flex min-h-screen flex-col">
+            <div className="flex-1">{children}</div>
+          </div>
         </body>
       </html>
     </>

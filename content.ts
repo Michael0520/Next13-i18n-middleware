@@ -9,19 +9,13 @@ export const dictionary: Record<string, DictionaryEntry> = {
     en: {
         homeHeader: "Home",
         homeContent: "Welcome to my home.",
-        aboutHeader: "About",
-        aboutContent: "This is the about page.",
+        aboutHeader: "About Me",
+        aboutContent: "Here is some information about me. English is my primary language."
     },
     es: {
         homeHeader: "Casa",
         homeContent: "Beinvenidos a mi casa.",
-        aboutHeader: "Acerca de",
-        aboutContent: "Esta es la página sobre nosotros.",
-    },
-    id: {
-        homeHeader: "Rumah",
-        homeContent: "Selamat datang di rumah saya.",
-        aboutHeader: "Tentang",
-        aboutContent: "Ini adalah halaman tentang kami.",
+        aboutHeader: "Sobre Yo",
+        aboutContent: "Aqui tenemos un poco informacion sobre yo. Hablo espanol tambien."
     }
 }
